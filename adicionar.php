@@ -23,12 +23,13 @@ $idade = filter_input(INPUT_POST, 'idade', FILTER_SANITIZE_SPECIAL_CHARS);
 
  echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
 
-$stmt = $conn->prepare("INSERT INTO users(nome, email, cidade, idade ,dataAtual)VALUES(:nome, :email, :cidade, :idade, now()");
+$stmt = $conn->prepare("INSERT INTO users(nome, email, cidade, idade)VALUES(:nome, :email, :cidade, :idade");
 $conn->exec("set names utf8mb4");
 $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
 $stmt->bindParam(':email', $email, PDO::PARAM_STR);
 $stmt->bindParam(':cidade', $cidade, PDO::PARAM_STR);
 $stmt->bindParam(':idade', $idade, PDO::PARAM_INT);
+
 
 $stmt->execute();
 
