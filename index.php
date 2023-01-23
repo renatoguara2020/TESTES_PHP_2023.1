@@ -30,6 +30,7 @@ $result = $conn->query("SELECT * FROM users ORDER BY id ASC");
             <th scope="col">Idade</th>
             <th scope="col">Email</th>
             <th scope="col">Cidade</th>
+            <th scope="col">Data</th>
             <th scope="col">Update | Delete</th>
         </thead>
         <?php
@@ -41,6 +42,7 @@ $result = $conn->query("SELECT * FROM users ORDER BY id ASC");
             echo "<td>".$row['idade']."</td>";
             echo "<td>".$row['email']."</td>";
             echo "<td>".$row['cidade']."</td>";
+            echo "<td>".$row['dataAtual']."</td>";
             echo "<td><a href=\"edit.php?id=$row[id]\">Update</a> | <a href=\"delete.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
 	}     echo "</tr>";
 	?>
